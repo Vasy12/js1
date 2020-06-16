@@ -1,9 +1,7 @@
-console.log( ' 2 + true  = ', 2 + true );
-console.log( ' 2 + false  = ', 2 + false );
-console.log( ' 2 + \'\'  = ', 2 + '' );
-console.log( ' 2 + \'45\'  = ', 2 + '45' );
-console.log( ' 2 + 45  = ', 2 + 45 );
-console.log( ' 2 + undefined  = ', 2 + undefined );
-console.log( ' 2 + null  = ', 2 + null );
-console.log( '2 + {} = ', 2 + {} );
-console.log( '2 + Symbol() = ', 2 + Symbol() );
+console.log('\'A\' + true = ', 'A ' + true );
+console.log('\'A\' + false = ', 'A ' + false );
+console.log('\'A\' + undefined = ', 'A ' + undefined );
+console.log('\'A\' + null = ', 'A ' + null );
+console.log('\'A\' + 987 = ', 'A ' + 987 );
+console.log('\'A\' + {} = ', 'A ' + {} );
+console.log('\'A\' + Symbol() = ', 'A ' + Symbol() );
