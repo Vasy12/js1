@@ -1,51 +1,13 @@
-/*const firstValue = prompt( 'Please input your first number' );
-
- const firstNumber = Number( firstValue );*/
-
-const firstNumber = Number( prompt( 'Please input your first number' ) );
-
-if (!isNaN( firstNumber )) {
-
-  const secondNumber = Number( prompt( 'Please input your second number' ) );
-
-  if (!isNaN( secondNumber )) {
-
-    const operationMark = prompt( 'Please choose operation: +, -, *, /' );
-    let operationFunc;
-    switch (operationMark) {
-
-      case '+': {
-        operationFunc = sum;
-      }
-        break;
-      case '-': {
-        operationFunc = subtraction;
-
-      }
-        break;
-      case '*': {
-        operationFunc = multiplication;
-
-      }
-        break;
-      case '/': {
-        operationFunc = division;
-
-      }
-        break;
-      default: {
-        operationFunc = 7;
-        alert( 'Unknown operation' );
-      }
-    }
-
-    if (typeof operationFunc === 'function') {
-      const result = operationFunc( firstNumber, secondNumber );
-      alert( result );
-    }
-
-  }
-
+/**
+ *
+ * @param {function} f
+ * @param rest
+ * @returns {*}
+ */
+function log(f, ...rest) {
+  const result = f( ...rest );
+  console.log( result );
+  return result;
 }
 
 /**
@@ -95,3 +57,8 @@ function division(a, b) {
   return a / b;
 
 }
+
+log( sum, 4, 6 );
+log( division, 4, 6 );
+log( multiplication, 4, 6 );
+log( subtraction, 4, 6 );
