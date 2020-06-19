@@ -1,50 +1,97 @@
-const user = {
-  name: 'Test',
-};
-console.log( user );
+/*const firstValue = prompt( 'Please input your first number' );
 
-user.isMale = true;
-console.log( user );
-user.age = 18;
-console.log( user );
-user.speak = function () {
-  alert( 'I\'m speaking' );
-};
-console.log( user );
-user.name = 'Ivan';
-console.log( user );
+ const firstNumber = Number( firstValue );*/
 
-/**
- *
- * @param {string} name
- * @param {boolean} isMale
- * @constructor
- * */
-function Cat(name, isMale) {
-  this.name = name;
-  this.isMale = isMale;
+const firstNumber = Number( prompt( 'Please input your first number' ) );
+
+if (!isNaN( firstNumber )) {
+
+  const secondNumber = Number( prompt( 'Please input your second number' ) );
+
+  if (!isNaN( secondNumber )) {
+
+    const operationMark = prompt( 'Please choose operation: +, -, *, /' );
+    let operationFunc;
+    switch (operationMark) {
+
+      case '+': {
+        operationFunc = sum;
+      }
+        break;
+      case '-': {
+        operationFunc = subtraction;
+
+      }
+        break;
+      case '*': {
+        operationFunc = multiplication;
+
+      }
+        break;
+      case '/': {
+        operationFunc = division;
+
+      }
+        break;
+      default: {
+        operationFunc = 7;
+        alert( 'Unknown operation' );
+      }
+    }
+
+    if (typeof operationFunc === 'function') {
+      const result = operationFunc( firstNumber, secondNumber );
+      alert( result );
+    }
+
+  }
 
 }
 
-const cat1 = new Cat( 'Murzik', true );
-const cat2 = new Cat( 'Dog', true );
-const cat3 = new Cat( 'Cake', false );
-
 /**
  *
- * @param firstName
- * @param lastName
- * @param age
- * @constructor
+ * @param {number} a
+ * @param {number} b
+ * @returns {number}
  */
-function User(firstName, lastName, age) {
-  this.name = firstName;
-  this.surname = lastName;
-  this.age = age;
+function sum(a, b) {
+
+  return a + b;
+
 }
 
-const user1 = new User( 'Ivan', 'Ivanov', 16 );
-const user2 = new User( 'Test', 'Testovich', 95 );
+/**
+ *
+ * @param {number} a
+ * @param {number} b
+ * @returns {number}
+ */
+function subtraction(a, b) {
 
+  return a - b;
 
+}
 
+/**
+ *
+ * @param {number} a
+ * @param {number} b
+ * @returns {number}
+ */
+function multiplication(a, b) {
+
+  return a * b;
+
+}
+
+/**
+ *
+ * @param {number} a
+ * @param {number} b
+ * @returns {number}
+ */
+function division(a, b) {
+
+  return a / b;
+
+}
