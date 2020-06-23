@@ -1,64 +1,6 @@
-/**
- *
- * @param {function} f
- * @param rest
- * @returns {*}
- */
-function log(f, ...rest) {
-  const result = f( ...rest );
-  console.log( result );
-  return result;
-}
+const firstValue = prompt( 'Please input you first number' );
+const secondValue = prompt( 'Please input you second number' );
 
-/**
- *
- * @param {number} a
- * @param {number} b
- * @returns {number}
- */
-function sum(a, b) {
+alert( `${firstValue} + ${secondValue} = ${Number( firstValue ) + Number( secondValue )}` );
 
-  return a + b;
 
-}
-
-/**
- *
- * @param {number} a
- * @param {number} b
- * @returns {number}
- */
-function subtraction(a, b) {
-
-  return a - b;
-
-}
-
-/**
- *
- * @param {number} a
- * @param {number} b
- * @returns {number}
- */
-function multiplication(a, b) {
-
-  return a * b;
-
-}
-
-/**
- *
- * @param {number} a
- * @param {number} b
- * @returns {number}
- */
-function division(a, b) {
-
-  return a / b;
-
-}
-
-log( sum, 4, 6 );
-log( division, 4, 6 );
-log( multiplication, 4, 6 );
-log( subtraction, 4, 6 );
