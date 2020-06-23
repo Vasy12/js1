@@ -1,21 +1,31 @@
-const CORRECT_PASSWORD = 'qwerty';
-const TRY_LIMIT = 5;
+/*let i = 0;
 
-let tryCount = 0;
-let isPasswordCorrect = false;
+ while (i <= 10) {
 
-do {
+ console.log( i++ );
+ }*/
 
-  isPasswordCorrect = prompt( 'Please input your password' ) === CORRECT_PASSWORD;
+/**
+ *
+ * @param {number} base
+ * @param {number} power - positive value
+ * @return {number}
+ */
+function pow(base, power) {
 
-  if (isPasswordCorrect) {
-    break;
+  if (power < 0) {
+    return 1 / pow( base, Math.abs( power ) );
   }
 
-} while (++tryCount < TRY_LIMIT);
+  let result = 1;
 
-alert( `Password ${isPasswordCorrect
-                   ? 'incorrect'
-                   : 'correct'}` );
+  for (let i = 0; i < power; i++) {
+    result *= base;
+  }
 
+  return result;
+
+}
+
+console.log( `pow( 2, -3 ) = ${pow( 2, -3 )}` );
 
