@@ -1,28 +1,14 @@
-/*
- * Вывести все числа от 1 до 100, которые кратные указанному
- пользователем числу.
+const familyPopulation = Number( prompt() );
 
- *
- * */
+const userFamily = {};
 
-const userNumber = Number( prompt() );
+for (let i = 0; i < familyPopulation; i++) {
 
-if (!isNaN( userNumber )) {
-  console.group( 'Not optimal solution' );
-
-  for (let i = 0; i < 100; i++) {
-    if (i % userNumber === 0) {
-      console.log( i );
-    }
-  }
-  console.groupEnd();
-
-  console.group( 'Optimal solution' );
-
-  for (let i = 0; i < 100; i += userNumber) {
-    console.log( i );
-  }
-  console.groupEnd();
+  userFamily[prompt( 'Name' )] = {
+    age: prompt( 'Age' ),
+    status: prompt( 'Status' ),
+  };
 
 }
 
+console.log( userFamily );
