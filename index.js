@@ -1,41 +1,12 @@
-const herbivore = {
-  eat() {
-    alert( `${this.name} eats grass` );
-  }
-};
+'use strict';
 
-const carnivorous = {
-  eat() {
-    alert( `${this.name} eats meat` );
+function Car(brand) {
+  if (!new.target) {
+    return new Car( brand );
   }
-};
 
-const omnivorous = {
-  eat() {
-    alert( `${this.name} eats everything` );
-  }
-};
+  this.brand = brand;
+}
 
-const cow = Object.create( herbivore, {
-  name: {
-    value: 'cow'
-  }
-} );
-
-const tiger = Object.create( carnivorous, {
-  name: {
-    value: 'tiger'
-  }
-} );
-
-const bear = Object.create( omnivorous, {
-  name: {
-    value: 'bear'
-  }
-} );
-
-const human = Object.create( omnivorous, {
-  name: {
-    value: 'human',
-  }
-} );
+const car1 = new Car( 'VW' );
+const car2 = Car( 'Toyota' );
