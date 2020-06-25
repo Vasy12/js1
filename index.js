@@ -1,18 +1,41 @@
-/*
-*
-* THIS
-*
-* */
-const duck = {
-  name: 'Duck',
-  fly() {
-    alert( `${this.name} flies!` );
-  },
-  speak() {
-    alert( `Quack-Quack!!!` );
-  },
+const herbivore = {
+  eat() {
+    alert( `${this.name} eats grass` );
+  }
 };
 
-const duckChild = Object.create(duck);
+const carnivorous = {
+  eat() {
+    alert( `${this.name} eats meat` );
+  }
+};
 
-duckChild.name = 987;
+const omnivorous = {
+  eat() {
+    alert( `${this.name} eats everything` );
+  }
+};
+
+const cow = Object.create( herbivore, {
+  name: {
+    value: 'cow'
+  }
+} );
+
+const tiger = Object.create( carnivorous, {
+  name: {
+    value: 'tiger'
+  }
+} );
+
+const bear = Object.create( omnivorous, {
+  name: {
+    value: 'bear'
+  }
+} );
+
+const human = Object.create( omnivorous, {
+  name: {
+    value: 'human',
+  }
+} );
