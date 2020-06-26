@@ -1,12 +1,14 @@
-const user = {
-  firstName: 'Vova',
-  lastName: 'Vovavich',
-  balance: 10000000,
-  passwordHash: '0as548dgf5hgj87h5bd2f4fg8df7gh',
-};
+class ClassCar {
 
-console.log( user );
+  constructor(brand) {
+    this.brand = brand;
+  }
 
-delete user.passwordHash;
+  go() {
+    alert( `${this.brand} car is go` );
+  }
 
-console.log( user );
+}
+
+const car3 = new ClassCar( 'BMW' );
+const car4 = new ClassCar( 'Mercedes-Benz' );
